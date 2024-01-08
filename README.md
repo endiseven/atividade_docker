@@ -72,9 +72,9 @@ services:
     ports:
       - 80:80
     environment:
-      WORDPRESS_DB_HOST: wordpress.cgnf3dpy0igl.us-east-1.rds.amazonaws.com
+      WORDPRESS_DB_HOST: wordpress.xxxxxxxxx.us-east-1.rds.amazonaws.com
       WORDPRESS_DB_USER: admin
-      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_PASSWORD: xxxxxxxx
       WORDPRESS_DB_NAME: wordpress
     volumes:
       - /mnt/efs/fs1/wordpress:/var/www/html
