@@ -5,6 +5,10 @@ Documentação da segunda atividade - Docker - AWS - PB COMPASS
 ## Criar VPC - AWS
 - Criar uma VPC selecionando a opção "VPC e muito mais" para a configuração automática de toda a rede.
 - Selecionar pelo menos 2 zonas de disponibilidade.
+
+## Grupos de Segurança
+- Um grupo de segurança padrão "default" foi configurado para garantir a comunicação entre os diversos serviços (RDS, EFS, LoadBalancer e EC2).
+	- Porta ```22``` para acesso ```SSH``` e porta 80 para HTTP.  
   
 ## Criar EFS
 - No serviço EFS, Selecionar "Criar sistema de arquivos"
@@ -49,25 +53,25 @@ chmod +x /usr/local/bin/docker-compose
 
 ```
 
-- Após instancia ser lançada verificar se o EFS foi montado corretamente
+- Após instância ser lançada verificar se o EFS foi montado corretamente.
 
 ```
 df - T
 ```
 
- - Verificar se o docker e o docker-compose foi instalado com sucesso
+ - Verificar se o docker e o docker-compose foi instalado com sucesso.
 ```
 docker --version
 docker-compose --version
 ```
   
 ## Criar RDS
-- Configurar manualmente, selecionar instancia para conectar (security groups serão criados)
-- Criar database inicial e nomea-la "wordpress"
-- Copiar "endpoint" para configuração do container wordpress
+- Configurar manualmente, selecionar uma instância para conectar (security groups necessários serão criados automaticamente).
+- Criar banco de dados inicial e nomea-lo "wordpress".
+- Após a criação do RDS, copiar o "endpoint" para configuração do container Wordpress.
   
 ## Na Instância EC2:
-- Criar pasta "wordpress" no EFS
+- Criar pasta "wordpress" no EFS.
 - Escrever o arquivo docker-compose.yml para subir o container de Wordpress e configurar:
 	- Enviroment: Com as informações do host mysql criado com o RDS
 	- Volumes: com a localização no ponto de montagem do EFS na instancia.
@@ -93,30 +97,35 @@ services:
 ```  
 docker-compose up -d
 ```
-- Verificar instalação
+- Verificar instalação:
 
 ```
 docker ps -a
 ```
   
 ## Load Balancer
-- Configurar load balancer e o target group
+- Criar e Configurar load balancer e o target group.
+	- Tipo Aplication Load Balancer
+	- Esquema: Voltado para internet
+ 	- Grupo de segurança: "Default", configurado no início da atividade. 		 	
+	- Registrar a instância como destino no Target Group.
   
-## Configuração wordpress:
-- Acessar o DNS do load balancer
+## Configuração wordpress
+- Acessar o DNS do load balancer:
 ```
 http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/
 ```
-- Realizar configuração inicial do Wordpress
+- Realizar configuração inicial do Wordpress.
   
 ## Criar AMI da instancia
 
 ## Criar modelo de execução usando a AMI
 - Lembrar das Tags de recurso.
+- Manter os grupos de segurança.
   
 ## Auto-Scaling
-- configurar o auto scaling group 
-- Definir load balancer e target groups
+- configurar o auto scaling group.
+- Definir load balancer e target groups.
 - Min 2 instancias, duas zonas de disponibilidade
 
 ## Acesso ao Wordpress
