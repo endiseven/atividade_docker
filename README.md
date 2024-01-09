@@ -121,8 +121,8 @@ http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/
 
 ## Acesso ao Wordpress
 
-- A página de login do wordpress pode ser acessada pelo DNS do load balancer acrescido de ```/wp-admin/```.
+- A página de login do wordpress pode ser acessada pelo DNS do load balancer acrescido de```/login/``` ou ```/wp-admin/```.
 ```
-http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/wp-admin/
+http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/login/
 ```
 
