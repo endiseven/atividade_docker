@@ -104,6 +104,9 @@ docker ps -a
   
 ## Configuração wordpress:
 - Acessar o DNS do load balancer
+```
+http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/
+```
 - Realizar configuração inicial do Wordpress
   
 ## Criar AMI da instancia
@@ -115,4 +118,11 @@ docker ps -a
 - configurar o auto scaling group 
 - Definir load balancer e target groups
 - Min 2 instancias, duas zonas de disponibilidade
+
+## Acesso ao Wordpress
+
+- A página de login do wordpress pode ser acessada pelo DNS do load balancer acrescido de ```/wp-admin/```.
+```
+http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/wp-admin/
+```
 
