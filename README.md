@@ -8,7 +8,7 @@ Documentação da segunda atividade - Docker - AWS - PB COMPASS
 
 ## Grupos de Segurança
 - Um grupo de segurança padrão "default" foi configurado para garantir a comunicação entre os diversos serviços (RDS, EFS, LoadBalancer e EC2).
-	- Porta ```22``` para acesso ```SSH``` e porta 80 para HTTP.  
+	- Porta ```22``` para acesso SSH e porta ```80``` para HTTP.  
   
 ## Criar EFS
 - No serviço EFS, Selecionar "Criar sistema de arquivos"
