@@ -49,7 +49,17 @@ chmod +x /usr/local/bin/docker-compose
 
 ```
 
-- Após instancia ser lançada verificar se o EFS foi montado corretamente e se o docker foi instalado com sucesso
+- Após instancia ser lançada verificar se o EFS foi montado corretamente
+
+```
+df - T
+```
+
+ - Verificar se o docker e o docker-compose foi instalado com sucesso
+```
+docker --version
+docker-compose --version
+```
   
 ## Criar RDS
 - Configurar manualmente, selecionar instancia para conectar (security groups serão criados)
@@ -79,9 +89,15 @@ services:
     volumes:
       - /mnt/efs/fs1/wordpress:/var/www/html
 ```
-
-- docker-compose up -d
+- Iniciar container docker com comando:
+```  
+docker-compose up -d
+```
 - Verificar instalação
+
+```
+docker ps -a
+```
   
 ## Load Balancer
 - Configurar load balancer e o target group
@@ -91,7 +107,10 @@ services:
 - Realizar configuração inicial do Wordpress
   
 ## Criar AMI da instancia
+
 ## Criar modelo de execução usando a AMI
+- Lembrar das Tags de recurso.
+  
 ## Auto-Scaling
 - configurar o auto scaling group 
 - Definir load balancer e target groups
