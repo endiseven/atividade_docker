@@ -17,7 +17,8 @@ Documentação da segunda atividade - Docker - AWS - PB COMPASS
 - Adicionar as Tags do recurso.
 - Configurar o EFS automáticamente no lançamento da instância
 	- Em "configurar armazenamento" clicar em "avançado".
- 	- Selecionar "Adicionar sistema de arquivos compartilhado" e definir o ponto de montagem.
+ 	- Selecionar "Adicionar sistema de arquivos compartilhado" e definir o ponto de montagem:
+    ```/mnt/efs/fs1```
   	- Mantenha as opções "Criar e anexar grupos de segurança automaticamente" e "Montar automaticamente o sistema de arquivos..." selecionadas.
 - Configurar o Docker e o docker-compose no user data    		 
 - Editar "User data" para utilizar dois tipos de script, cloud-config e bash
