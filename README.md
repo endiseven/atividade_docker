@@ -2,13 +2,15 @@
 
 Documentação da segunda atividade - Docker - AWS - PB COMPASS
 
+
 ## Criar VPC - AWS
 - Criar uma VPC selecionando a opção "VPC e muito mais" para a configuração automática de toda a rede.
 - Selecionar pelo menos 2 zonas de disponibilidade.
 
 ## Grupos de Segurança
 - Um grupo de segurança padrão "default" foi configurado para garantir a comunicação entre os diversos serviços (RDS, EFS, LoadBalancer e EC2).
-	- Porta ```22``` para acesso SSH e porta ```80``` para HTTP.  
+	- Abrir Porta ```22``` para acesso SSH e porta ```80``` para HTTP.
+ 	- Liberar Todo tráfego em todas as portas de qualquer protocolo entre os membros do grupo de segurança.  	  
   
 ## Criar EFS
 - No serviço EFS, Selecionar "Criar sistema de arquivos"
@@ -125,13 +127,14 @@ http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/
 - Manter os grupos de segurança.
   
 ## Auto-Scaling
-- configurar o auto scaling group.
+- Selecionar o modelo de execução.
+- Configurar o auto scaling group.
 - Definir load balancer e target groups.
 - Min 2 instancias, duas zonas de disponibilidade
 
 ## Acesso ao Wordpress
 
-- A página de login do wordpress pode ser acessada pelo DNS do load balancer acrescido de```/login/``` ou ```/wp-admin/```.
+- A página de login do wordpress pode ser acessada pelo DNS do load balancer acrescido de ```/login/``` ou ```/wp-admin/```.
 ```
 http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/login/
 ```
