@@ -114,7 +114,7 @@ docker ps -a
 	- Registrar a instância como destino no Target Group.
   
 ## Configuração wordpress
-- Acessar o DNS do load balancer:
+- Acessar o nome do DNS do load balancer:
 ```
 http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/
 ```
@@ -134,7 +134,7 @@ http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/
 
 ## Acesso ao Wordpress
 
-- A página de login do wordpress pode ser acessada pelo DNS do load balancer acrescido de ```/login/``` ou ```/wp-admin/```.
+- A página de login do wordpress pode ser acessada pelo nome do DNS do load balancer acrescido de ```/login/``` ou ```/wp-admin/```.
 ```
 http://lbwordpress2-1659449724.us-east-1.elb.amazonaws.com/login/
 ```
