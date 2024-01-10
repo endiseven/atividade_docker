@@ -17,7 +17,7 @@ Documentação da segunda atividade - Docker - AWS - PB COMPASS
   
 ## Criar instancia EC2 para configuração inicial
 - Adicionar as Tags do recurso.
-- Configurar o EFS automáticamente no lançamento da instância
+- Configurar o EFS automaticamente no lançamento da instância
 	- Em "configurar armazenamento" clicar em "avançado".
  	- Selecionar "Adicionar sistema de arquivos compartilhado" e definir o ponto de montagem:
     ```/mnt/efs/fs1```
